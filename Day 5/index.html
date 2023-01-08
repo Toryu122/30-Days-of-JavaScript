@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 5</title>
+  </head>
+  <body>
+    <script>
+      //Exercise 1
+      const webTechs = [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Node",
+        "MongoDB",
+      ];
+      // Declare an empty array;
+      const arr = Array();
+
+      // Declare an array with more than 5 number of elements
+      const array2 = Array(5).fill(0);
+      // Find the length of your array
+      console.log("The lenght of my array is " + array2.length);
+
+      // Get the first item, the middle item and the last item of the array.
+      let firstItem = webTechs[0];
+      let length = webTechs.length;
+      let middleItem = webTechs[parseInt(length / 2)];
+      let lastItem = webTechs[length - 1];
+      console.log("The first item: " + firstItem);
+      console.log("The middle item: " + middleItem);
+      console.log("The last item: " + lastItem);
+
+      // Declare an array called mixedDataTypes, put different data types in the array and find the length of the array. The array size should be greater than 5
+      const mixedDataTypes = ["String", 1, 1.5, true, undefined, ["a", "b"]];
+      console.log(mixedDataTypes.length);
+
+      // Declare an array variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
+      let string = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon";
+      const itCompanies = string.split(", ");
+
+      // Print the array using console.log()
+      console.log(itCompanies);
+
+      // Print the number of companies in the array
+      console.log("The number of companies is: " + itCompanies.length);
+
+      // Print the first company, middle and last company
+      let firstComp = itCompanies[0];
+      let arrayLength = itCompanies.length;
+      let middleComp = itCompanies[parseInt(length / 2)];
+      let lastComp = itCompanies[length - 1];
+      console.log("The first item: " + firstComp);
+      console.log("The middle item: " + middleComp);
+      console.log("The last item: " + lastComp);
+
+      // Print out each company
+      for (let index = 0; index < itCompanies.length; index++) {
+        console.log(itCompanies[index]);
+      }
+
+      // Change each company name to uppercase one by one and print them out
+      for (let index = 0; index < itCompanies.length; index++) {
+        console.log(itCompanies[index].toUpperCase());
+      }
+
+      // Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies.
+      // let lastWord = itCompanies.pop();
+      // let sentence = itCompanies.join(", ") + " and " + lastWord + " are big IT companies"
+      // console.log(sentence);
+
+      // Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found
+      let checkExist = itCompanies.indexOf("IBM");
+      if (checkExist === -1) {
+        console.log("Not found");
+      } else {
+        console.log("Found at " + checkExist);
+      }
+
+      // Filter out companies which have more than one 'o' without the filter method
+
+      // Sort the array using sort() method
+      console.log(itCompanies.sort());
+
+      // Reverse the array using reverse() method
+      console.log(itCompanies.reverse());
+
+      // Slice out the first 3 companies from the array
+      console.log(itCompanies.slice(0, 3));
+
+      // Slice out the last 3 companies from the array
+      console.log(
+        itCompanies.slice(Math.ceil(itCompanies.length / 2), itCompanies.length)
+      );
+
+      // Slice out the middle IT company or companies from the array
+      console.log(itCompanies.slice(Math.ceil(itCompanies.length / 2), 5));
+
+      // Remove the first IT company from the array
+      itCompanies.shift();
+      console.log(itCompanies);
+
+      // Remove the middle IT company or companies from the array
+      itCompanies.splice(Math.ceil(itCompanies.length / 2), 1);
+      console.log(itCompanies);
+
+      // Remove the last IT company from the array
+      itCompanies.pop();
+      console.log(itCompanies);
+
+      // Remove all IT companies
+      itCompanies.splice(0, itCompanies.length);
+      console.log(itCompanies);
+    </script>
+
+    <script type="module" src="./main.js">
+      //Exercise 2
+      // First remove all the punctuations and change the string to array and count the number of words in the array
+      let text =
+        "I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.";
+      let text2 = text.replaceAll(",", "");
+      let text3 = text2.replaceAll(".", "");
+      console.log(text3);
+      let words = text3.split(" ");
+      console.log(words);
+      console.log(words.length);
+
+      /*
+      add 'Meat' in the beginning of your shopping cart if it has not been already added
+      add Sugar at the end of you shopping cart if it has not been already added
+      remove 'Honey' if you are allergic to honey
+      modify Tea to 'Green Tea'
+      */
+      const shoppingCart = ["Milk", "Coffee", "Tea", "Honey"];
+      shoppingCart.unshift("Meat");
+      console.log(shoppingCart);
+      shoppingCart.push("Sugar");
+      console.log(shoppingCart);
+      shoppingCart.splice(shoppingCart.length - 2, 1);
+      console.log(shoppingCart);
+      shoppingCart[shoppingCart.length - 2] = "Green Tea";
+      console.log(shoppingCart);
+
+      const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
+      const backEnd = ['Node','Express', 'MongoDB'];
+      const fullStack = frontEnd.concat(backEnd);
+      console.log(fullStack);
+    </script>
+
+    <script>
+      //Exercise 3
+      const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+      console.log(ages);
+      ages.sort();
+      console.log(ages);
+      console.log("Min = " + ages.slice(0,1));
+      console.log("Max = " + ages[ages.length-1]);
+
+      console.log("Median age = " + ages[ages.length/2]);
+
+      let total = eval(ages.join("+"));
+      console.log("Average = "+parseInt((total/10)));
+
+      let average = parseInt((total/10));
+      let max = ages.slice(0,1);
+      let min = ages[ages.length-1];
+
+      console.log("Range = " + (max-min));
+      console.log(Math.abs(min - average));
+      console.log(Math.abs(max - average));
+    </script>
+  </body>
+</html>
