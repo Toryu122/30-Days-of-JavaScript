@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 6</title>
+  </head>
+  <body>
+    <script>
+      //Exercise 1
+      // for (let i = 0; i < 10; i++) {
+      //     console.log(i+" ");
+      // }
+      // let i2=0;
+      // while (i2<10) {
+      //     console.log(i2+" ");
+      //     i2+=1;
+      // }
+      // let i3=0;
+      // do {
+      //     console.log(i3+" ");
+      //     i3+=1;
+      // } while (i3<10);
+
+      // for (let i = 10; i >= 0; i--) {
+      //     console.log(i+" ");
+      // }
+      // let i4=10;
+      // while (i4>=0) {
+      //     console.log(i4+" ");
+      //     i4-=1;
+      // }
+      // let i5=10;
+      // do {
+      //     console.log(i5+" ");
+      //     i5-=1;
+      // } while (i5>=0);
+
+      // let n = prompt("Enter a number: ");
+      // for (let i = 0; i < n; i++) {
+      //     console.log(i);
+      // }
+
+      // for (let i = 1; i <= 7; i++) {
+      //     for (let j = 1; j <=i; j++) {
+      //         console.log("*");
+      //     }
+      //     console.log("\n");
+      // }
+
+      for (let i = 0; i <= 10; i++) {
+        console.log(i + " x " + i + " = " + i * i);
+      }
+
+      console.log("i\ti^2\ti^3");
+      for (let i = 0; i < 11; i++) {
+        console.log(i + "\t" + Math.pow(i, 2) + "\t" + Math.pow(i, 3));
+      }
+
+      for (let i = 0; i <= 100; i++) {
+        if (i % 2 == 0) console.log(i);
+      }
+
+      for (let i = 0; i <= 100; i++) {
+        if (i % 2 != 0) console.log(i);
+      }
+
+      for (let i = 0; i <= 100; i++) {
+        let dem = 0;
+        if (i < 2) continue;
+        for (let j = 2; j < i; j++) {
+          if (i % j == 0) dem++;
+        }
+        if (dem === 0) console.log(i);
+      }
+
+      let sum = 0;
+      for (let i = 0; i <= 100; i++) {
+        sum += i;
+      }
+      console.log("The sum of 0 to 100 is " + sum);
+
+      let sumEven = 0;
+      let sumOdd = 0;
+      for (let i = 0; i <= 100; i++) {
+        if (i % 2 == 0) sumEven += i;
+        else if (i % 2 != 0) sumOdd += i;
+      }
+      console.log("The sum of all evens is " + sumEven);
+      console.log("The sum of all odds is " + sumOdd);
+
+      const numArr = [sumEven, sumOdd];
+      console.log(numArr);
+
+      const arr = [];
+      //Normally, Math.random() will only generate a number between 0 and 1
+      //To generate as our own will, do like this: Math.random()*(max-min)+min;
+      for (let i = 0; i < 5; i++) {
+        arr.push(Math.random() * (5 - 0) + 0);
+      }
+      console.log(arr);
+
+      const arr2 = [];
+      for (let i = 1; i < 6; i++) {
+        let number = Math.ceil(Math.random() * (50 - 10) + 10);
+        let number2 = number % 10;
+        let number3 = parseInt(number / 10);
+        if (number2 === number3) {
+          i--;
+        } else {
+          arr2.push(number);
+        }
+      }
+      console.log(arr2);
+
+      const upper = [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+      ];
+      let lower = [];
+      for (const i of upper) {
+        lower.push(i.toLowerCase());
+      }
+      console.log(upper);
+      console.log(lower);
+      let number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      let charArr = lower.concat(upper);
+      let charArr2 = charArr.concat(number);
+      console.log(charArr2);
+      let string1 = "";
+      for (let i = 0; i < 6; i++) {
+        char = charArr2[Math.round(Math.random() * (charArr2.length - 0) + 0)];
+        console.log(char);
+        string1 += char;
+      }
+      console.log(string1);
+
+      //Exercise 2
+      let string2 = "";
+      let rand = Math.round(Math.random() * (15 - 0) + 0);
+      for (let i = 0; i < rand; i++) {
+        char = charArr2[Math.round(Math.random() * (charArr2.length - 0) + 0)];
+        console.log(char);
+        string2 += char;
+      }
+      console.log(string2);
+
+      let hexaArr = [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+      ];
+
+      let hexaString = "#";
+      for (let i = 0; i < 6; i++) {
+        char = hexaArr[Math.round(Math.random() * (hexaArr.length - 0) + 0)];
+        console.log(char);
+        hexaString += char;
+      }
+      console.log(hexaString);
+
+      let rgbnum = 0;
+      let rgbString = "rgb(";
+      for (let i = 0; i < 3; i++) {
+        char = Math.round(Math.random() * (255 - 0) + 0);
+        rgbString += char;
+        if (i <= 1) rgbString += ",";
+        else if (i > 1) rgbString += ")";
+      }
+      console.log(rgbString);
+
+      const countries = [
+        "Albania",
+        "Bolivia",
+        "Canada",
+        "Denmark",
+        "Ethiopia",
+        "Finland",
+        "Germany",
+        "Hungary",
+        "Ireland",
+        "Japan",
+        "Kenya",
+      ];
+
+      const webTechs = [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Node",
+        "MongoDB",
+      ];
+
+      const mernStack = ["MongoDB", "Express", "React", "Node"];
+      const newCountries = [];
+      for (const i of countries) {
+        newCountries.push(i.toUpperCase());
+      }
+      console.log(newCountries);
+
+      const newCountries2 = [];
+      for (const i of countries) {
+        newCountries2.push(i.length);
+      }
+      console.log(newCountries2);
+
+      const newArray = [];
+      for (let i = 0; i < countries.length; i++) {
+        let name = countries[i];
+        let abbre = countries[i].substr(0, 3).toUpperCase();
+        let len = countries[i].length;
+        newArray[i] = [name, abbre, len];
+      }
+      console.log(newArray);
+
+      const landArray = [];
+      for (let i = 0; i < countries.length; i++) {
+        let check = countries[i].search("land");
+        if (check !== -1) landArray.push(countries[i]);
+      }
+      console.log(landArray);
+
+      const iaArray = [];
+      for (let i = 0; i < countries.length; i++) {
+        let check = countries[i].search("ia");
+        if (check !== -1) iaArray.push(countries[i]);
+      }
+      console.log(iaArray);
+
+      let charNumMax = countries[0].length;
+      let country = "";
+      for (let i = 1; i < countries.length; i++) {
+        let charNum = countries[i].length;
+        if (charNumMax < charNum) {
+          charNumMax = charNum;
+          country = countries[i];
+        }
+      }
+      console.log(country);
+
+      let fiveCharCountries = [];
+      for (let i = 1; i < countries.length; i++) {
+        let charNum = countries[i].length;
+        if (charNum === 5) {
+          fiveCharCountries.push(countries[i]);
+        }
+        console.log(fiveCharCountries);
+      }
+
+      let longestCharWebTech = webTechs[0].length;
+      let longestWebTech = "";
+      for (let i = 1; i < webTechs.length; i++) {
+        let charNum = webTechs[i].length;
+        console.log(webTechs[i]);
+        console.log(charNum);
+        if (longestCharWebTech < charNum) {
+          longestCharWebTech = charNum;
+          longestWebTech = webTechs[i];
+        }
+      }
+      console.log(longestWebTech);
+
+      const newArray2 = [];
+      for (let i = 0; i < webTechs.length; i++) {
+        let name = webTechs[i];
+        let len = webTechs[i].length;
+        newArray2[i] = [name, len];
+      }
+      console.log(newArray2);
+
+      let mern = "";
+      for (const i of mernStack) {
+        mern += i.charAt(0);
+      }
+      console.log(mern);
+
+      for (const i of webTechs) {
+        console.log(i);
+      }
+
+      const reverseFruit = [];
+      const fruit = ["banana", "orange", "mango", "lemon"];
+      for (let index = fruit.length - 1; index >= 0; index--) {
+        reverseFruit.push(fruit[index]);
+      }
+      console.log(reverseFruit);
+
+      const fullStack = [
+        ["HTML", "CSS", "JS", "React"],
+        ["Node", "Express", "MongoDB"],
+      ];
+
+      for (const front of fullStack) {
+        for (const back of front) {
+          console.log(back);
+        }
+      }
+
+      //Exercise 3
+      
+    </script>
+  </body>
+</html>
