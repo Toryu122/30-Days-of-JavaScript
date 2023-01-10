@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 7</title>
+</head>
+<body>
+    
+    <script>
+        //Exercise 1
+
+        const fullName = (first,last) =>{
+            return "Hi! " + first + " " + last;
+        }
+        let name = fullName("Kira","Toryu");
+        console.log(name);
+
+        const addNumber = (a,b) =>{
+            let sum = a+b;
+            return sum;
+        }
+        let sum = addNumber(4,5);
+        console.log(sum);
+
+        const areaOfRectangle = (length, height) =>{
+            let area = length*height;
+            return area;
+        }
+        let area = areaOfRectangle(5,10);
+        console.log(area);
+
+        const perimeterOfRectangle = (length, height) =>{
+            let perimeter = (length + height)*2;
+            return perimeter;
+        }
+        let perimeter = perimeterOfRectangle(8,2);
+        console.log(perimeter);
+
+        const volumeOfRectPrism = (length, height, width) =>{
+            let volume = length*height*width;
+            return volume;
+        }
+        let volume = volumeOfRectPrism(2,3,5);
+        console.log(volume);
+
+        const areaOfCircle = (radius, pi = 3.14,) => pi*radius*radius;
+        let areaC = areaOfCircle(3);
+        console.log(areaC);
+
+        const circumOfCircle = (radius, pi=3.14) => pi*2*radius;
+        let circum = circumOfCircle(4);
+        console.log(circum);
+
+        const density = (mass, volume) => mass/volume;
+        let dens = density(15.5,5);
+        console.log(dens);
+
+        const speed = (distance, time) => distance/time;
+        let v = speed(18,3);
+        console.log(v);
+
+        const weight = (mass, gravity = 9.81) => mass*gravity;
+        let w = weight(8);
+        console.log(w);
+
+        const convertCelsiusToFahrenheit = (celsius) =>{
+            let oF = (celsius*(9/5))+ 32;
+            return oF;
+        }
+        let f = convertCelsiusToFahrenheit(0);
+        console.log(f);
+
+        const bodyMassIndex = (w, height) => {
+            let BMI = w/(height*height);
+            return BMI;
+        }
+        let BMI = bodyMassIndex(80, 1.75);
+        console.log(BMI);
+        if(BMI > 30){
+            console.log("Obese");
+        }
+        else if(BMI >= 25 && BMI <= 29.9){
+            console.log("Overweight");
+        }
+        else if(BMI >= 18.5 && BMI <= 24.9){
+            console.log("Normal");
+        }
+        else if(BMI < 18.5){
+            console.log("Underweight");
+        }
+
+        const checkSeason = (month) =>{
+            month = month.toLowerCase();
+            switch (month) {
+                case 'december':
+                    return "Winter";
+                    break;
+                case 'january':
+                    return "Winter";
+                    break;
+                case 'febuary':
+                    return "Winter";
+                    break;
+                case 'march':
+                    return "Spring";
+                    break;
+                case 'april':
+                    return "Spring";
+                    break;
+                case 'may':
+                    return "Spring";
+                    break;
+                case 'june':
+                    return "Summer";
+                    break;
+                case 'july':
+                    return "Summer";
+                    break;
+                case 'august':
+                    return "Summer";
+                    break;
+                case 'september':
+                    return "Autumn";
+                    break;
+                case 'october':
+                    return "Autumn";
+                    break;
+                case 'november':
+                    return "Autumn";
+                    break;
+                default:
+                    return "Not a valid month";
+                    break;
+            }
+        }
+        let season = checkSeason("january");
+        console.log(season);
+
+        const findMax = (a, b, c) => {
+            let max = a;
+            if(b>a)
+                max = b;
+            if (c>a)
+                max = c;
+            return max;
+        }
+        let a = 3;
+        let b = 4;
+        let c = 8;
+        let max = findMax(a,b,c);
+        console.log("The max between " + a +", " +b+ " and "+c+ " is "+max);
+
+        //Exercise 2
+        const getDelta = (a, b, c) => {
+            let delta = (Math.pow(b,2)) - (4*a*c);
+            return delta;
+        }
+        const solveQuadEquation = (a, b, c)=> {
+            let delta = getDelta(a,b,c);
+            let values = [];
+            if(delta === 0)
+            {   
+                values.push(b/(2*a))
+                return values;
+            }
+            else if(delta > 0)
+            {
+                let values1 = ((b*-1)+Math.sqrt(delta))/(2*a);
+                let values2 = ((b*-1)-Math.sqrt(delta))/(2*a);
+                values.push(values1);
+                values.push(values2);
+                return values;
+            }
+            else if(delta < 0)
+            {
+                values.push(0);
+                return values;
+            }
+        }
+        values = solveQuadEquation(-50,30,12);
+        console.log(values);
+
+        const printArray = (arr) => {
+            for (const i of arr) {
+                console.log(i);
+            }
+        }
+        const numArr = [1,2,3,4,5,6,7,8];
+        printArray(numArr);
+
+        const swapValues = (a, b) => {
+            console.log("d="+a+" e="+b);
+            let tmp = a;
+            a = b;
+            b = tmp;  
+            console.log("=> d="+a+" e="+b);
+        }
+        let d = 3;
+        let e = 4;
+        swapValues(d,e);
+
+        const reverseArray = (arr) => {
+            const newArr = [];
+            for (let i=arr.length; i>0; i--) {
+                newArr.push(i);
+            }
+            return newArr;
+        }
+        const arr = [1,2,3,4,5,6,7];
+        console.log(arr);
+        const newArr = reverseArray(arr);
+        console.log(newArr);
+
+        const capitallizeArr = (arr) => {
+            const capArr = [];
+            for (let i = 0; i < arr.length; i++) {
+                capArr.push(arr[i].toUpperCase());
+            }
+            return capArr;
+        }
+        const normalArr = ["banana", "orange", "durian"];
+        const capArr = capitallizeArr(normalArr);
+        console.log(capArr);
+
+        const addItem = (item, arr) => {
+            arr.push(item);
+            return arr;
+        }
+        const newArr2 = [1,2,3,4];
+        console.log(newArr2);
+        const added = addItem(5,newArr2);
+        console.log(added);
+
+        const removeItem = (index, arr) => {
+            let newArr = arr;
+            for (let i = 0; i < arr.length; i++) {
+                if(i === index)
+                {
+                    arr.splice(index,1);
+                }
+            }
+            return newArr;
+        }
+        const removed = removeItem(2,newArr2);
+        console.log(removed);
+
+        const sumOfNumbers = (...number) => {
+            let sum = 0;
+            for (const i of number) {
+                sum+=i;
+            }
+            return sum;
+        }
+        let sumNum = sumOfNumbers(1,2,3,4);
+        console.log(sumNum);
+
+        const sumOfOdds = (...number) => {
+            let sum = 0;
+            for (const i of number) {
+                if(i%2 != 0)
+                {
+                    sum+=i;
+                }
+            }
+            return sum;
+        }
+        let sumOdd = sumOfOdds(1,2,3,4);
+        console.log(sumOdd);
+
+        const sumOfEvens = (...number) => {
+            let sum = 0;
+            for (const i of number) {
+                if(i%2 == 0)
+                {
+                    sum+=i;
+                }
+            }
+            return sum;
+        }
+        let sumEven = sumOfEvens(1,2,3,4);
+        console.log(sumEven);
+
+        const countOfEvensAndOdds = (number) => {
+            let countEven = 0;
+            let countOdd = 0;
+            for (let i=0; i<=number; i++) {
+                if(i%2 == 0)
+                {
+                    countEven++;
+                }
+                else
+                {
+                    countOdd++;
+                }
+            }
+            console.log("The number of odds are "+countOdd);
+            console.log("The number of evens are "+countEven);
+        }
+        countOfEvensAndOdds(100);
+
+        const randomHexaNumberGenerator = () => {
+            let hexaArr = [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+            ];
+            let hexaString = "#";
+            for (let i = 0; i < 6; i++) {
+                char = hexaArr[Math.round(Math.random() * (hexaArr.length - 0) + 0)];
+                let u;
+                if(char == u)
+                    i--;
+                hexaString += char;
+            }
+            return hexaString;
+        }
+        let hexaString =randomHexaNumberGenerator();
+        console.log(hexaString);
+
+        const userIdGenerator = () =>{
+            const upper = [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L",
+                "M",
+                "N",
+                "O",
+                "P",
+                "Q",
+                "R",
+                "S",
+                "T",
+                "U",
+                "V",
+                "W",
+                "X",
+                "Y",
+                "Z",
+            ];
+            const number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const lower = [];
+            for (const i of upper) {
+                lower.push(i.toLowerCase());
+            }
+            let charArr = lower.concat(upper);
+            let charArrTotal = charArr.concat(number);
+            let string = "";
+            for (let i = 0; i < 7; i++) {
+                let char = charArrTotal[Math.round(Math.random() * (charArrTotal.length - 0) + 0)];
+                if(char == undefined)
+                    i--;
+                string += char;    
+            }
+            return string;
+        }
+        let string = userIdGenerator();
+        console.log(string);
+
+        const userIdGeneratorByUser = (totalID, totalChar) =>{
+            const upper = [
+                "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+            ];
+            const number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const lower = [];
+            for (const i of upper) {
+                lower.push(i.toLowerCase());
+            }
+            let charArr = lower.concat(upper);
+            let charArrTotal = charArr.concat(number);
+            let string = "";
+            for(let i=0; i<totalID; i++)
+            {
+                for (let j = 0; j < totalChar; j++) {
+                    let char = charArrTotal[Math.round(Math.random() * (charArrTotal.length - 0) + 0)];
+                    if(char == undefined)
+                        j--;
+                    string += char;    
+                }
+                string+="\n"
+            }
+            console.log(string);
+        }
+        userIdGeneratorByUser(3,4);
+
+        const rgbColorGenerator = () =>{
+            let rgbString = "rgb(";
+            for (let i = 0; i < 3; i++) {
+                char = Math.round(Math.random() * (255 - 0) + 0);
+                rgbString += char;
+                if (i <= 1) rgbString += ",";
+                else if (i > 1) rgbString += ")";
+            }
+            console.log(rgbString);
+        }
+        rgbColorGenerator();
+
+        
+    </script>
+</body>
+</html>
