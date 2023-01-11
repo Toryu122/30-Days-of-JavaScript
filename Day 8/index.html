@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8</title>
+</head>
+<body>
+    
+    <script>
+        //Exercise 1
+        const dog ={
+            name: "Doggo", 
+            legs: 4, 
+            color: "Brown", 
+            age: 10,
+            breed: "",
+
+            getDogInfo:function(){
+
+            },
+            bark: function(){
+                return "woof woof";
+            }
+        };
+        console.log(dog);
+
+        console.log(Object.values(dog));
+        console.log(dog.bark());
+
+        //Exercise 2
+        const users = {
+        Alex: {
+            email: 'alex@alex.com',
+            skills: ['HTML', 'CSS', 'JavaScript'],
+            age: 20,
+            isLoggedIn: false,
+            points: 30
+        },
+        Asab: {
+            email: 'asab@asab.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+            age: 25,
+            isLoggedIn: false,
+            points: 50
+        },
+        Brook: {
+            email: 'daniel@daniel.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+            age: 30,
+            isLoggedIn: true,
+            points: 50
+        },
+        Daniel: {
+            email: 'daniel@alex.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+            age: 20,
+            isLoggedIn: false,
+            points: 40
+        },
+        John: {
+            email: 'john@john.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+            age: 20,
+            isLoggedIn: true,
+            points: 50
+        },
+        Thomas: {
+            email: 'thomas@thomas.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+            age: 20,
+            isLoggedIn: false,
+            points: 40
+        },
+        Paul: {
+            email: 'paul@paul.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+            age: 20,
+            isLoggedIn: false,
+            points: 40
+        }
+        }
+
+        const keys = Object.values(users); //Get all the values from users object inside one array
+        const name = Object.keys(users); //Get only the name
+        const valuesOfKey = []; //Separate the values and store it into an array as an element
+        const skill = []; //Seperate the skill array from valuesOfKey and the name of name array
+        for (let i=0; i<keys.length; i++) {
+            valuesOfKey.push(keys[i]);
+        }
+        for (let i = 0; i < valuesOfKey.length; i++) {
+            skill[i]=valuesOfKey[i].skills;
+        }
+        console.log(valuesOfKey)
+        let count = skill[0].length;
+        console.log(count);
+        let pos = 0;
+        for (let i = 1; i < skill.length; i++) {
+            if(count<skill[i].length)
+            {
+                count = skill[i].length;
+                pos = i;
+            }
+        }
+        console.log("The person who has many skills is " +name[pos]);
+        
+        let countLogged = 0;
+        for (let i = 0; i < keys.length; i++) {
+            if(keys[i].isLoggedIn === true)
+                countLogged++;
+        }
+        console.log("There's "+countLogged+" users logged");
+
+        let countMERN = 0;
+        let MERNusers = "";
+        for (let i = 0; i < skill.length; i++) {
+            console.log(skill[i]);
+            let checkM = skill[i].indexOf("MongoDB");
+            let checkE = skill[i].indexOf("Express");
+            let checkR = skill[i].indexOf("React");
+            let checkN = skill[i].indexOf("Node");
+            if(checkM,checkE,checkR,checkN !== -1)
+            {
+                countMERN++;
+                MERNusers+=name[i] + " ";
+            }
+        }
+        console.log(MERNusers,"is the MERN stack dev");
+
+        const myObject = Object.assign({},users,
+        {
+            Toryu:
+                {
+                email: 'toryu@gmail.com',
+                skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+                age: 21,
+                isLoggedIn: true,
+                points: 40
+        }
+        }
+        )
+        console.log(myObject);
+
+        //Exercise 3
+    const users2 = [
+        {
+            _id: 'ab12ex',
+            username: 'Alex',
+            email: 'alex@alex.com',
+            password: '123123',
+            createdAt:'08/01/2020 9:00 AM',
+            isLoggedIn: false
+        },
+        {
+            _id: 'fg12cy',
+            username: 'Asab',
+            email: 'asab@asab.com',
+            password: '123456',
+            createdAt:'08/01/2020 9:30 AM',
+            isLoggedIn: true
+        },
+        {
+            _id: 'zwf8md',
+            username: 'Brook',
+            email: 'brook@brook.com',
+            password: '123111',
+            createdAt:'08/01/2020 9:45 AM',
+            isLoggedIn: true
+        },
+        {
+            _id: 'eefamr',
+            username: 'Martha',
+            email: 'martha@martha.com',
+            password: '123222',
+            createdAt:'08/01/2020 9:50 AM',
+            isLoggedIn: false
+        },
+        {
+            _id: 'ghderc',
+            username: 'Thomas',
+            email: 'thomas@thomas.com',
+            password: '123333',
+            createdAt:'08/01/2020 10:00 AM',
+            isLoggedIn: false
+        }
+    ];
+
+    const products = [
+        {
+            _id: 'eedfcf',
+            name: 'mobile phone',
+            description: 'Huawei Honor',
+            price: 200,
+            ratings: [
+                { userId: 'fg12cy', rate: 5 },
+                { userId: 'zwf8md', rate: 4.5 }
+            ],
+            likes: []
+        },
+        {
+            _id: 'aegfal',
+            name: 'Laptop',
+            description: 'MacPro: System Darwin',
+            price: 2500,
+            ratings: [],
+            likes: ['fg12cy']
+        },
+        {
+            _id: 'hedfcg',
+            name: 'TV',
+            description: 'Smart TV:Procaster',
+            price: 400,
+            ratings: [{ userId: 'fg12cy', rate: 5 }],
+            likes: ['fg12cy']
+        }
+    ]
+    </script>
+</body>
+</html>
