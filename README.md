@@ -5,3 +5,4 @@
 ## Day 6 [✅] - 1/9/2023 - Loop
 ## Day 7 [✅] - 1/10/2023 - Function
 ## Day 8 [✅] - 1/10/2023 - Object and Variables Scope
+## Day 9 [✅] - 1/10/2023 - Set and Map
