@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 12</title>
+  </head>
+  <body>
+    <script>
+      //Exercise 1
+      class Animal {
+        constructor(name, age, color, legs) {
+          this.name = name;
+          this.age = age;
+          this.color = color;
+          this.legs = legs;
+        }
+        getInfo() {
+          let name = this.name;
+          let age = this.age;
+          let color = this.color;
+          let legs = this.legs;
+          let fullInfo = `The name is ${name}, it live ${age}, ${color} color and have ${legs} legs`;
+        }
+      }
+
+      class Cat extends Animal {
+        constructor(animal, name, age, color, legs) {
+          super(name, age, color, legs);
+          this.animal = animal;
+        }
+        getInfo() {
+          let animal = this.animal;
+          let name = this.name;
+          let age = this.age;
+          let color = this.color;
+          let legs = this.legs;
+          let fullInfo = `I'm a ${animal}, the name is ${name}, it live ${age}, ${color} color and have ${legs} legs`;
+          return fullInfo;
+        }
+        meow() {
+          return "Meow, Meow";
+        }
+      }
+
+      class Dog extends Animal {
+        constructor(animal, name, age, color, legs) {
+          super(name, age, color, legs);
+          this.animal = animal;
+        }
+        getInfo() {
+          let animal = this.animal;
+          let name = this.name;
+          let age = this.age;
+          let color = this.color;
+          let legs = this.legs;
+          let fullInfo = `I'm a ${animal}, the name is ${name}, it live ${age}, ${color} color and have ${legs} legs`;
+          return fullInfo;
+        }
+        bark() {
+          return "Meow, Meow";
+        }
+      }
+
+      
+    </script>
+  </body>
+</html>
