@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 13</title>
+  </head>
+  <body>
+    <script>
+      //Exercise 1
+      const skills = ["HTML", "CSS", "JS", "React", "Node", "Python"];
+      const txt = JSON.stringify(skills);
+      console.log(txt);
+
+      let age = 250;
+      const txt2 = JSON.stringify(age);
+      console.log(txt2);
+
+      let isMarried = true;
+      const txt3 = JSON.stringify(isMarried);
+      console.log(txt3);
+
+      const student = {
+        firstName: "Asabeneh",
+        lastName: "Yetayehe",
+        age: 250,
+        isMarried: true,
+        skills: ["HTML", "CSS", "JS", "React", "Node", "Python"],
+      };
+      const txt4 = JSON.stringify(student);
+      console.log(txt4);
+
+      //Exercise 2
+      const txt5 = JSON.stringify(student, ["firstName", "lastName", "skills"]);
+      console.log(txt5);
+
+      //Exercise 3
+      const txt6 = `{
+    "Alex": {
+        "email": "alex@alex.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 30
+    },
+    "Asab": {
+        "email": "asab@asab.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Redux",
+            "MongoDB",
+            "Express",
+            "React",
+            "Node"
+        ],
+        "age": 25,
+        "isLoggedIn": false,
+        "points": 50
+    },
+    "Brook": {
+        "email": "daniel@daniel.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Redux"
+        ],
+        "age": 30,
+        "isLoggedIn": true,
+        "points": 50
+    },
+    "Daniel": {
+        "email": "daniel@alex.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Python"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 40
+    },
+    "John": {
+        "email": "john@john.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Redux",
+            "Node.js"
+        ],
+        "age": 20,
+        "isLoggedIn": true,
+        "points": 50
+    },
+    "Thomas": {
+        "email": "thomas@thomas.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 40
+    },
+    "Paul": {
+        "email": "paul@paul.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "MongoDB",
+            "Express",
+            "React",
+            "Node"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 40
+    }
+}
+`;
+      const json1 = JSON.parse(txt6, undefined, 7);
+      console.log(json1);
+
+      const name = Object.keys(json1);
+      const arr = Object.values(json1);
+      let max = arr[0].skills.length;
+      let position;
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i].skills.length > max) {
+          max = arr[i].skills.length;
+          position = i;
+        }
+      }
+      console.log("The user who has many skills is " + name[position]);
+    </script>
+  </body>
+</html>
