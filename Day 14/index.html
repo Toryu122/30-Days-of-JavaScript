@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 14</title>
+  </head>
+  <body>
+    <script>
+      //Exercise 1
+      let firstName = 'Toryu';
+      let lastName = 'Kira';
+      let age = 21;
+      let country = 'Vietnam';
+      let city = 'Ho Chi Minh';
+      localStorage.setItem('firstName',firstName);
+      localStorage.setItem('lastName',lastName);
+      localStorage.setItem('age',age);
+      localStorage.setItem('country',country);
+      localStorage.setItem('city',city);
+      console.log(localStorage);
+
+      localStorage.clear();
+      const student = {
+        firstName: 'Toryu',
+        lastName: 'Kira',
+        skills: ['HTML', 'CSS', 'JS', 'React'],
+        age: 21,
+        country: 'Vietnam',
+        enrolledKeys: 12
+      };
+      const txt = JSON.stringify(student);
+      localStorage.setItem('student',txt);
+      console.log(localStorage);
+    </script>
+  </body>
+</html>
