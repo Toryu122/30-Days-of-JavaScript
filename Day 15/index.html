@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 15</title>
+  </head>
+  <body>
+    <script>
+      const countriesAPI = "https://restcountries.com/v2/all";
+      const catsAPI = "https://api.thecatapi.com/v1/breeds";
+      // fetch(countriesAPI)
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     console.log(typeof data);
+      //     console.log(data);
+      //     console.log("\n");
+      //   })
+      //   .catch((err) => console.error(err));
+
+      // fetch(catsAPI)
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     value = data;
+      //     console.log(typeof data);
+      //     console.log(data);
+      //   })
+      //   .catch((err) => console.error(err));
+
+      //This function do the fecth data from the API
+      const fetchData = async (api) => {
+        try {
+          const response = await fetch(api);
+          const countries = await response.json();
+          const value = countries;
+          return value;
+        } catch (err) {
+          console.error(err);
+        }
+      };
+
+      //This function take the data from the fetch
+      const doCountryPromises = new Promise((reso, reje) => {
+        const data = fetchData(countriesAPI);
+        if (data) {
+          reso(data);
+        } else {
+          reje("oops!");
+        }
+      });
+
+      //This make a format for the data
+      doCountryPromises
+        .then((res) => {
+          let max = 0;
+          let c = 0;
+          const populations = [];
+          const name = [];
+          const largest10 = [];
+          for (const i of res) {
+            populations.push(i.population);
+            name.push(i.name);
+          }
+          populations.sort(function (a, b) {
+            return b - a;
+          });
+          for (let i = 0; i < 9; i++) {
+            console.log(populations[i])
+          }
+          for (const i of res) {
+            if(i.population === populations[0]) {
+              largest10.push(i.name);
+              console.log(i.name);
+            }
+            if(i.population === populations[1]) {
+              largest10.push(i.name);
+              console.log(i.name);
+            }
+            if(i.population === populations[2]) {
+              largest10.push(i.name);
+              console.log(i.name);
+            }
+            if(i.population === populations[3]) {
+              largest10.push(i.name);
+              console.log(i.name);
+            }
+            if(i.population === populations[4]) {
+              largest10.push(i.name);
+              console.log(i.name);
+            }
+            if(i.population === populations[5]) {
+              largest10.push(i.name);
+              console.log(i.name);
+            }
+            if(i.population === populations[6]) {
+              largest10.push(i.name);
+              console.log(i.name);
+            }
+            if(i.population === populations[7]) {
+              largest10.push(i.name);
+              console.log(i.name);
+            }
+            if(i.population === populations[8]) {
+              largest10.push(i.name);
+              console.log(i.name);
+            }
+            if(i.population === populations[10]) {
+              largest10.push(i.name);
+              console.log(i.name);
+            }
+          }
+          console.log(res);
+          console.log("The 10 largest countries is " + largest10);
+        })
+        .catch((err) => console.log(err));
+
+      /*const doCatPromises = new Promise((reso, reje) => {
+        const data = fetchData(catsAPI);
+        if (data) {
+          reso(data);
+        } else {
+          reje("oops!"); 
+        }
+      });
+      doCatPromises.then(res => {
+        for (const i of res) {
+          console.log(i);
+        }
+      }).catch(err => console.log(err));*/
+    </script>
+  </body>
+</html>

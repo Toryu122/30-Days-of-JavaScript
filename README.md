@@ -10,4 +10,5 @@
 ## Day 11 [✅] - 1/16/2023 - Console Object Method
 ## Day 12 [✅] - 1/16/2023 - Classes
 ## Day 13 [✅] - 1/16/2023 - JSON
-## Day 13 [✅] - 1/16/2023 - HTML5 localStorage and sessionStorage
+## Day 14 [✅] - 1/16/2023 - HTML5 localStorage and sessionStorage
+## Day 15 [✅] - 1/16/2023 - Promise method, await and async
