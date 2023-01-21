@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 16</title>
+  </head>
+  <body>
+    <script>
+      function operation(){
+        let count = 0;
+        function plus(){
+          count+=2;
+          return count;
+        }
+        function minus(){
+          count-=2;
+          return count;
+        }
+        function multiply(){
+          count*=2;
+          return count;
+        }
+        function divide(){
+          count/=2;
+          return count;
+        }
+        return {
+          plus:plus(),
+          minus:minus(),
+          multiply:multiply(),
+          divide:divide()
+        }
+      }
+      const func = operation();
+      console.log(func.plus);
+      console.log(func.minus);
+      console.log(func.multiply);
+      console.log(func.divide);
+
+      function personAcc(){
+        let firstName = "";
+        let lastName = "";
+        let incomes = 0;
+        let expense = 0;
+        function totalIncome(){
+
+        }
+        function totalExpense(){
+
+        }
+        function accountInfo(){
+
+        }
+        function addIncome(){
+
+        }
+        function addExpense(){
+
+        }
+        function accountBalance(){
+          
+        }
+      }
+    </script>
+  </body>
+</html>
