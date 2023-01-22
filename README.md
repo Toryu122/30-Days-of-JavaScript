@@ -13,3 +13,4 @@
 ## Day 14 [✅] - 1/19/2023 - HTML5 localStorage and sessionStorage
 ## Day 15 [✅] - 1/20/2023 - Promise method, await and async
 ## Day 16 [✅] - 1/21/2023 - Closure function
+## Day 17 [✅] - 1/22/2023 - DOM (Document Object Model)

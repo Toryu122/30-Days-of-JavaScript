@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 17</title>
+  </head>
+  <body>
+    <h3>Exercise 1</h3>
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <p id="para3"></p>
+    <p id="para4"></p>
+
+    <script>
+      let a = document.querySelector("p");
+      a.innerHTML =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in faucibus lacus. Donec cursus consequat mi ut auctor. Nulla odio.";
+
+      let b = document.querySelector("#para1");
+      let c = document.querySelector("#para2");
+      let d = document.querySelector("#para3");
+      let e = document.querySelector("#para4");
+      console.log(b, c, d, e);
+
+      const allP = document.querySelectorAll("p");
+      for (const a of allP) {
+        console.log(a.innerText);
+        a.innerText =
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in faucibus lacus. Donec cursus consequat mi ut auctor. Nulla odio.";
+      }
+      // allP[3].innerHTML = "Fourth-Paragraph"
+
+      // allP[0].className = "para1";
+      // allP[0].id = "paragraph1";
+      // allP[1].setAttribute('id','paragraph2');
+      // allP[1].setAttribute('class','para2');
+
+      allP[0].style.fontSize = "20px";
+      allP[1].style.color = "red";
+      allP[2].style.background = "cyan";
+      allP[3].style.fontFamily = "Consolas";
+
+      allP.forEach((element, i) => {
+        if (i % 2 === 0) {
+          element.style.color = "red";
+        } else {
+          element.style.color = "green";
+        }
+      });
+    </script>
+  </body>
+</html>
