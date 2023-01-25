@@ -14,4 +14,5 @@
 ## Day 15 [✅] - 1/20/2023 - Promise method, await and async
 ## Day 16 [✅] - 1/21/2023 - Closure function
 ## Day 17 [✅] - 1/22/2023 - DOM (Document Object Model)
-## Day 18 [✅] - 1/23/2023 - DOM 2
+## Day 18 [✅] - 1/23/2023 - DOM 2 (Tags/Elements manipulate)
+## Day 18 [✅] - 1/25/2023 - DOM 3 (Event listener)

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 19</title>
+  </head>
+  <body>
+    <label for="Input number"></label>
+    <input type="text" name="numInp" id="numInp" value="50" />
+    <button id="gen" onclick="numGen()">Generate</button>
+    <div id="container"></div>
+
+    <button><a href="keycode.html" style="text-decoration: none; color: black;">Get keycode</a></button>
+    <script>
+      let container = document.getElementById("container");
+      function primeCheck(num) {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function numGen() {
+        let input = document.getElementById("numInp").value;
+        if (isNaN(input)) {
+          let alert;
+          alert = document.createElement("span");
+          alert.style.color = "red";
+          alert.textContent = "Not a number!";
+          container.appendChild(alert);
+        } else {
+          let title;
+          let c = document.getElementsByClassName("container");
+          let count = 0;
+          for (let i = 0; i <= input; i++) {
+            let br = document.createElement("br");
+            title = document.createElement("div");
+            title.className = "number";
+            title.style.fontSize = "24px";
+            title.style.fontFamily = "Consolas";
+            if (primeCheck(i) === true) {
+              title.style.background = "red";
+            } else {
+              if (i % 2 === 0) {
+                title.style.background = "green";
+              } else if (i % 2 !== 0) {
+                title.style.background = "yellow";
+              }
+            }
+
+            title.textContent = i;
+            document.getElementById("container").appendChild(title);
+            count++;
+            if (count === 6) {
+              document.getElementById("container").appendChild(br);
+              count = 0;
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

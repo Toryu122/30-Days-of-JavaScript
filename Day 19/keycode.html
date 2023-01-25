@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keycode get</title>
+
+    <style>
+      .container > #button {
+        text-align: center;
+        width: 360px;
+        height: 50px;
+        filter: drop-shadow(5px 5px 4px #0c0c0c);
+        font-size: large;
+        /* Center vertically and horizontally */
+        position: absolute;
+        top: 25%;
+        left: 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="button">Press any key to get keycode</div>
+    </div>
+
+    <script>
+      let key;
+      let div = document.getElementById("container");
+      keyPress = document.body.addEventListener("keydown", (e) => {
+        let alert = document.createElement("span");
+        alert.style.color = "green";
+        alert.style.fontSize = "large";
+        alert.textContent = e.key + " ";
+        div.appendChild(alert);
+      });
+    </script>
+  </body>
+</html>
